@@ -97,7 +97,9 @@ def getPredictions(summaries, testSet):
 
 def getAccuracy(testSet, predictions):
 	correct = 0
+	print("Actual\tPredicted")
 	for i in range(len(testSet)):
+		print(testSet[i][-1],"\t",predictions[i])
 		if testSet[i][-1] == predictions[i]:
 			correct += 1
 	return (correct/float(len(testSet))) * 100.0
