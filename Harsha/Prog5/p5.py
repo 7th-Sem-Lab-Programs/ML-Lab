@@ -70,7 +70,9 @@ def det_accuracy(freq_table,data,cols):
 	correct = 0
 	# print(actual_classes)
 	# print(predicted_classes)
+	print("Actual\tPredicted")
 	for i in range(len(actual_classes)):
+		print(actual_classes[i],"\t",predicted_classes[i])
 		if actual_classes[i] == predicted_classes[i]:
 			correct +=1
 	print("Correctly predicted instances: ",correct)
