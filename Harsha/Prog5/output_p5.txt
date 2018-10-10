@@ -1,0 +1,15 @@
+Dataset Loaded!!!
+
+Enter the split ratio: .75
+10  instances for Training
+4  instances for Testing
+
+Training Done!!
+Testing...
+Actual  Predicted
+No       No
+No       Yes
+No       No
+Yes      Yes
+Correctly predicted instances:  3
+Accuracy of the model:  75.0 %

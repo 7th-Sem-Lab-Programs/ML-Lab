@@ -1,0 +1,7 @@
+Split 14  rows into train= 10  and test= 4  rows.
+Actual  Predicted
+1.0      1.0
+0.0      1.0
+0.0      0.0
+0.0      0.0
+Accuracy:  75.0 %
