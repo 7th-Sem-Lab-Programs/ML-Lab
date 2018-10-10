@@ -39,17 +39,16 @@ def stdev(numbers):
 		return math.sqrt(sum([pow(x-avg,2) for x in numbers])/float(len(numbers)-1))
  
 def summarize(dataset):
-	summaries = [(mean(attribute), stdev(attribute)) for attribute in zip(*dataset)[:-1]]
+	summaries = [(mean(attribute), stdev(attribute)) for attribute in list(zip(*dataset))[:-1]]
 	#del summaries[-1]
 	return summaries
  
 def summariseData(dataset):
 	separated = separateByClass(dataset)
 	summary = {}
-	for key, value in separated.iteritems():
+	for key, value in separated.items():
 		summary[key] = summarize(value)
 	return summary
-
 
 def calculateProbability(x, mean, stdev):
 	if(2*math.pow(stdev,2) == 0):
@@ -63,7 +62,7 @@ def calculateProbability(x, mean, stdev):
  
 def calculateClassProbabilities(summaries, inputVector):
 	probabilities = {}
-	for classValue, classSummaries in summaries.iteritems():
+	for classValue, classSummaries in summaries.items():
 		probabilities[classValue] = 1
 		for i in range(len(classSummaries)):
 			mean, stdev = classSummaries[i]
@@ -74,7 +73,7 @@ def calculateClassProbabilities(summaries, inputVector):
 def predict(summaries, inputVector):
 	probabilities = calculateClassProbabilities(summaries, inputVector)
 	bestLabel, bestProb = None, -1
-	for classValue, probability in probabilities.iteritems():
+	for classValue, probability in probabilities.items():
 		if bestLabel is None or probability > bestProb:
 			bestProb = probability
 			bestLabel = classValue
