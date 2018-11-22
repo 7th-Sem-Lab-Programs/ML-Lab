@@ -1,0 +1,22 @@
+Predicted classes: 
+[2 2 2 1 0 1 2 2 0 1 1 2 1 0 0 0 2 1 2 0]
+Actual classes:
+[2 2 1 1 0 1 2 2 0 1 1 1 1 0 0 0 2 1 2 0]
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00         6
+          1       1.00      0.75      0.86         8
+          2       0.75      1.00      0.86         6
+
+avg / total       0.93      0.90      0.90        20
+
+Confusion matrix is: 
+
+[[6 0 0]
+ [0 6 2]
+ [0 0 6]]
+
+
+Accuracy is: 
+0.9
+
