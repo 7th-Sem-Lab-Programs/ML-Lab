@@ -1,0 +1,40 @@
+rahulj@rahulj-HP-Notebook:~/Downloads$ python Lab9.py 
+Training dataset size:  (120, 4)
+Testing dataset size:  (30, 4)
+Confusion matrix is: 
+[[11  0  0]
+ [ 0 12  1]
+ [ 0  0  6]]
+Accuracy of our model is equal to 96.67 %.
+Expected:  2  Got:  2
+Expected:  1  Got:  1
+Expected:  0  Got:  0
+Expected:  2  Got:  2
+Expected:  0  Got:  0
+Expected:  2  Got:  2
+Expected:  0  Got:  0
+Expected:  1  Got:  1
+Expected:  1  Got:  1
+Expected:  1  Got:  1
+Expected:  2  Got:  2
+Expected:  1  Got:  1
+Expected:  1  Got:  1
+Expected:  1  Got:  1
+Expected:  1  Got:  2
+Expected:  0  Got:  0
+Expected:  1  Got:  1
+Expected:  1  Got:  1
+Expected:  0  Got:  0
+Expected:  0  Got:  0
+Expected:  2  Got:  2
+Expected:  1  Got:  1
+Expected:  0  Got:  0
+Expected:  0  Got:  0
+Expected:  2  Got:  2
+Expected:  0  Got:  0
+Expected:  0  Got:  0
+Expected:  1  Got:  1
+Expected:  1  Got:  1
+Expected:  0  Got:  0
+Number of mis-classified are:  1
+

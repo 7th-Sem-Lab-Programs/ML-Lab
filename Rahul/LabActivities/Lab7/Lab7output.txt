@@ -1,0 +1,61 @@
+rahulj@rahulj-HP-Notebook:~/Downloads/LabActivities/Lab7$ python3 Lab7.py 
+Few examples from the dataset are given below
+
+    age  sex   cp  trestbps   chol  fbs  restecg  thalach  exang  oldpeak  slope   ca thal  heartdisease
+0  63.0  1.0  1.0     145.0  233.0  1.0      2.0    150.0    0.0      2.3    3.0  0.0  6.0             0
+1  67.0  1.0  4.0     160.0  286.0  0.0      2.0    108.0    1.0      1.5    2.0  3.0  3.0             2
+2  67.0  1.0  4.0     120.0  229.0  0.0      2.0    129.0    1.0      2.6    2.0  2.0  7.0             1
+3  37.0  1.0  3.0     130.0  250.0  0.0      0.0    187.0    0.0      3.5    3.0  0.0  3.0             0
+4  41.0  0.0  2.0     130.0  204.0  0.0      2.0    172.0    0.0      1.4    1.0  0.0  3.0             0
+
+Attributes and datatypes
+age             float64
+sex             float64
+cp              float64
+trestbps        float64
+chol            float64
+fbs             float64
+restecg         float64
+thalach         float64
+exang           float64
+oldpeak         float64
+slope           float64
+ca               object
+thal             object
+heartdisease      int64
+dtype: object
+
+Learning CPDs using Maximum Likelihood Estimators...
+
+Inferencing with Bayesian Network:
+
+1.Probability of HeartDisease given Age=28
+╒════════════════╤═════════════════════╕
+│ heartdisease   │   phi(heartdisease) │
+╞════════════════╪═════════════════════╡
+│ heartdisease_0 │              0.6791 │
+├────────────────┼─────────────────────┤
+│ heartdisease_1 │              0.1212 │
+├────────────────┼─────────────────────┤
+│ heartdisease_2 │              0.0810 │
+├────────────────┼─────────────────────┤
+│ heartdisease_3 │              0.0939 │
+├────────────────┼─────────────────────┤
+│ heartdisease_4 │              0.0247 │
+╘════════════════╧═════════════════════╛
+
+2. Probability of HeartDisease given chol (Cholestoral) =100
+╒════════════════╤═════════════════════╕
+│ heartdisease   │   phi(heartdisease) │
+╞════════════════╪═════════════════════╡
+│ heartdisease_0 │              0.5400 │
+├────────────────┼─────────────────────┤
+│ heartdisease_1 │              0.1533 │
+├────────────────┼─────────────────────┤
+│ heartdisease_2 │              0.1303 │
+├────────────────┼─────────────────────┤
+│ heartdisease_3 │              0.1259 │
+├────────────────┼─────────────────────┤
+│ heartdisease_4 │              0.0506 │
+╘════════════════╧═════════════════════╛
+
