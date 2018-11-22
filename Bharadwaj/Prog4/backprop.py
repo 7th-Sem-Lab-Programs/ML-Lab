@@ -160,22 +160,23 @@ def back_propagation(train, test, l_rate, n_epoch, n_hidden):
 		predictions.append(prediction)
 	return(predictions)
 
-# Test Backprop on Seeds dataset
-seed(1)
-# load and prepare data
-filename = 'seeds_dataset.csv'
-dataset = load_csv(filename)
-for i in range(len(dataset[0])-1):
-	str_column_to_float(dataset, i)
-# convert class column to integers
-str_column_to_int(dataset, len(dataset[0])-1)
-# normalize input variables
-minmax = dataset_minmax(dataset)
-normalize_dataset(dataset, minmax)
+def main():
+	# Test Backprop on Seeds dataset
+	seed(1)
+	# load and prepare data
+	filename = 'seeds_dataset.csv'
+	dataset = load_csv(filename)
+	for i in range(len(dataset[0])-1):
+		str_column_to_float(dataset, i)
+	# convert class column to integers
+	str_column_to_int(dataset, len(dataset[0])-1)
+	# normalize input variables
+	minmax = dataset_minmax(dataset)
+	normalize_dataset(dataset, minmax)
 
-# evaluate algorithm
-l_rate = 0.5
-n_epoch = 20
-n_hidden = 5
-accuracy = evaluate_algorithm(dataset, back_propagation, l_rate, n_epoch, n_hidden)
-print('Accuracy: %.3f%%' % accuracy)
+	# evaluate algorithm
+	l_rate = 0.5
+	n_epoch = 20
+	n_hidden = 5
+	accuracy = evaluate_algorithm(dataset, back_propagation, l_rate, n_epoch, n_hidden)
+	print('Accuracy: %.3f%%' % accuracy)

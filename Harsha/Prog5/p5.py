@@ -8,13 +8,11 @@ def splitDatasetNumpy(data,splitRatio):
 	test = data.drop(index)
 	return train,test
 
-#Split the Data into test and train data based on the split ratio
 def splitDataset(data,splitRatio):
 	train = data.sample(frac = splitRatio)
 	test = data.drop(train.index)
 	return train,test
 
-#Function to find the prior probablities
 def find_prior(data):
 	classes = set(data[data.columns[-1]])
 	prior = {}
@@ -22,7 +20,6 @@ def find_prior(data):
 		prior[cls] = len(data.ix[data[data.columns[-1]] == cls])/len(data)
 	return prior
 
-#Function to generate the frequency table for the given data
 def generate_freq_table(data,attibuteValues):
 	freq_table = pd.DataFrame(columns = ['Probablity'],index = set(data.columns[:-1]))
 
@@ -35,7 +32,6 @@ def generate_freq_table(data,attibuteValues):
 		freq_table['Probablity'][column] = temp
 	return freq_table
 
-#Function to predict the class labels
 def predict(freq_table,test,cols,classes):
 	p_t_given_cls = {}
 	for cls in classes:
@@ -58,7 +54,6 @@ def predict(freq_table,test,cols,classes):
 			p_cls_given_t[cls] = p_t_given_cls[cls]*prior[cls]/p_t
 	return max(p_cls_given_t,key = p_cls_given_t.get)
 
-#Function to determine the accuracy of the trained model
 def det_accuracy(freq_table,data,cols):
 	actual_classes = list(data[data.columns[-1]])
 	predicted_classes = []
@@ -80,19 +75,19 @@ def det_accuracy(freq_table,data,cols):
 	
 
 data = pd.read_csv('data.csv')
-print("Dataset Loaded!!!\n")
+print("Dataset : \n")
+print(data)
+
 classes = set(data[data.columns[-1]])
 attibuteValues = {}
 for col in data.columns[:-1]:
 	values = set(data[col])
 	attibuteValues[col] = values
-splitRatio = float(input("Enter the split ratio: "))
-# splitRatio=0.50
+splitRatio = float(input("\nEnter the split ratio: "))
 train, test = splitDataset(data,splitRatio)
 print(len(train)," instances for Training")
 print(len(test)," instances for Testing")
 prior = find_prior(train)
 freq_table = generate_freq_table(train,attibuteValues)
-#freq_table.to_csv('pothole_pred.csv')
 print("\nTraining Done!!\nTesting...")
 det_accuracy(freq_table,test,data.columns[:-1])
